@@ -1,6 +1,9 @@
 {
   "functions": {
-    "source": "apps/api"
+    "source": "apps/api/build",
+    "predeploy": [
+      "cp apps/api/.env apps/api/build/.env"
+    ]
   },
   "emulators": {
     "ui": {

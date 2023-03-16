@@ -1,5 +1,5 @@
 import express from "express";
-import * as functions from "firebase-functions";
+const { onRequest } = require('firebase-functions/v2/https');
 import { sumValues, fibonacci } from "@shared/core";
 
 const app = express();
@@ -13,4 +13,4 @@ app.get("*", (req, res) => {
   });
 });
 
-export const server = functions.https.onRequest(app);
+export const server = onRequest(app);
